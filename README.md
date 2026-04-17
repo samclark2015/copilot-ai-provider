@@ -2,19 +2,6 @@
 
 A [Vercel AI SDK](https://sdk.vercel.ai) provider backed by the [GitHub Copilot SDK](https://github.com/github/copilot-sdk). Use `generateText` and `streamText` with GitHub Copilot models while keeping tool-call follow-ups as **non-premium** requests.
 
-## Background
-
-The standard `vscode.lm` API charges a premium Copilot request for every LLM call — including each tool-call iteration. The GitHub Copilot SDK (which drives the Copilot CLI) sets `X-Initiator: agent` on follow-up requests, making them non-premium. Only the first user-initiated prompt counts against your quota.
-
-This provider runs the full Copilot agent loop inside a single `doGenerate` call. The Vercel AI SDK sees `finishReason: "stop"` and never fires its own tool loop, so N tool-call iterations cost exactly 1 premium request.
-
-See [posit-dev/positron#12016](https://github.com/posit-dev/positron/issues/12016) for the original issue.
-
-## Requirements
-
-- Node.js ≥ 22 (the bundled Copilot CLI uses `node:sqlite`, unavailable in Node 20)
-- A GitHub account with an active Copilot subscription
-
 ## Installation
 
 ```bash
