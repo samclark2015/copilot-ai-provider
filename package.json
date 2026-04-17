@@ -1,7 +1,17 @@
 {
-  "name": "copilot-sdk-test",
+  "name": "copilot-ai-provider",
   "version": "1.0.0",
+  "description": "Vercel AI SDK provider backed by the GitHub Copilot SDK",
   "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
   "scripts": {
     "demo": "tsx scripts/demo.ts",
     "demo:verbose": "COPILOT_LOG_LEVEL=debug tsx scripts/demo.ts",
@@ -22,5 +32,10 @@
   },
   "engines": {
     "node": ">=22.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samclark2015/copilot-ai-provider"
+  },
+  "license": "MIT"
 }
