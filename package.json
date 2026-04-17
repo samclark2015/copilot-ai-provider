@@ -1,0 +1,26 @@
+{
+  "name": "copilot-sdk-test",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "demo": "tsx scripts/demo.ts",
+    "demo:verbose": "COPILOT_LOG_LEVEL=debug tsx scripts/demo.ts",
+    "demo:proxy": "HTTPS_PROXY=http://127.0.0.1:8080 NODE_EXTRA_CA_CERTS=$HOME/.mitmproxy/mitmproxy-ca-cert.pem tsx scripts/demo.ts",
+    "demo:vercel": "tsx scripts/demo-vercel.ts",
+    "demo:vercel:proxy": "HTTPS_PROXY=http://127.0.0.1:8080 NODE_EXTRA_CA_CERTS=$HOME/.mitmproxy/mitmproxy-ca-cert.pem tsx scripts/demo-vercel.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/provider": "^3.0.0",
+    "@github/copilot-sdk": "^0.1.8",
+    "ai": "^6.0.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
